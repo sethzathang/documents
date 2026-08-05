@@ -18,10 +18,10 @@
   <ul>
     <li><strong>No sign-up form.</strong> The app creates an anonymous account for you automatically. We do not ask for your email address, password, or phone number.</li>
     <li><strong>No advertising or behavioral profiling.</strong> We do not sell your data or use it to target ads.</li>
-    <li>You choose a <strong>display name</strong>, <strong>avatar</strong>, and <strong>region</strong> (and, for some regions, a state or subdivision) during setup.</li>
+    <li>You choose a <strong>name</strong> (first and last), <strong>avatar</strong>, and <strong>region</strong> (and, for some regions, a state or subdivision) during setup. Only your <strong>first name</strong> is shown to other players.</li>
     <li>Your <strong>profile and game progression</strong> are stored in our cloud database so they sync across sessions and devices tied to your account.</li>
     <li><strong>Friends, invites, and online status</strong> use your profile information as described below.</li>
-    <li>We collect limited <strong>crash and diagnostic data</strong> to find and fix bugs (see below). This is not used for advertising.</li>
+    <li>We collect limited <strong>analytics, crash, and diagnostic data</strong> through Google Firebase to understand usage and to find and fix bugs (see below). This is not used for targeted advertising.</li>
     <li>Active match data on our game server is held <strong>in memory only</strong> for the duration of a game session.</li>
   </ul>
 
@@ -29,7 +29,7 @@
 
   <h3>Information you provide</h3>
   <ul>
-    <li><strong>Display name</strong> — your first and last name as shown in the app. You can change these in your profile. They are stored in our database and shown to other players during games and in social features.</li>
+    <li><strong>Name</strong> — the first and last name you choose during setup, stored in our database. <strong>Only your first name is shown to other players</strong> — both the players you are matched with and your friends. Your last name is not shown to other players.</li>
     <li><strong>Avatar</strong> — one of a fixed set of built-in cartoon avatars you select. This is a preset choice, not an uploaded image or photo.</li>
     <li><strong>Region and state</strong> — the country or region (and, where applicable, state or subdivision) you select during setup. This is information you choose; we do not collect GPS or precise location data.</li>
   </ul>
@@ -49,16 +49,17 @@
     <li><strong>Room invites</strong> — invitations you send or receive to join a private game.</li>
     <li><strong>Online presence</strong> — whether you appear online to friends, based on your connection to our server (not GPS).</li>
   </ul>
-  <p>Your Profile ID, display name, and avatar are visible to friends and to players you interact with through these features.</p>
+  <p>Your Profile ID, first name, and avatar are visible to friends and to players you interact with through these features.</p>
 
-  <h3>Crash and diagnostic data</h3>
-  <p>To keep the app stable, we use a third-party crash-reporting service that automatically collects information when the app crashes or encounters certain errors. This may include:</p>
+  <h3>Analytics, crash, and diagnostic data</h3>
+  <p>To keep the app stable and understand how it is used, we use <strong>Google Firebase</strong> (Firebase Analytics and Firebase Crashlytics). These services automatically collect information while you use the app and when it crashes or encounters certain errors. This may include:</p>
   <ul>
     <li><strong>Crash reports</strong> — stack traces and error details needed to diagnose what went wrong.</li>
     <li><strong>Device and app information</strong> — such as app version, operating system version, and device model.</li>
-    <li><strong>Basic usage signals</strong> — limited diagnostic events (for example, app opens and in-app actions leading up to a crash) to help us understand context around a failure. We use these only to improve reliability, not for advertising or profiling.</li>
+    <li><strong>Usage and analytics events</strong> — for example app opens, screens viewed, and in-app actions, so we can understand how the app is used, measure performance, and fix problems. We use these to operate and improve the app, not to build advertising profiles.</li>
+    <li><strong>Advertising ID</strong> — on Android, Firebase Analytics may access your device's <strong>advertising identifier</strong>, a resettable ID managed by Google Play. We use it only for analytics and measurement, never to show you targeted ads. You can reset or delete this identifier in your device settings.</li>
   </ul>
-  <p>Crash and diagnostic data is not linked to your display name or Profile ID in a way that is shown to other players. It is tied to an anonymous installation identifier assigned by the reporting service.</p>
+  <p>This data is tied to an anonymous, Firebase-assigned installation identifier (and, on Android, the advertising ID) rather than to your name or Profile ID, and it is not shown to other players.</p>
 
   <h3>Information stored on your device</h3>
   <p>The app also keeps the following locally on your device:</p>
@@ -69,7 +70,7 @@
   <p>You can remove locally stored data by clearing the app's data or uninstalling the app. Cloud profile data remains until you delete your account (see below).</p>
 
   <h3>Information shared during gameplay</h3>
-  <p>When you join a match, your <strong>display name, avatar, Profile ID, and progression stats</strong> (such as XP, level, and win record) are sent to our server and shown to the other players at your table.</p>
+  <p>When you join a match, your <strong>first name, avatar, Profile ID, and progression stats</strong> (such as XP, level, and win record) are sent to our server and shown to the other players at your table. Your last name is not shared with other players.</p>
 
   <h3>Technical information</h3>
   <ul>
@@ -83,10 +84,9 @@
     <li>Your email address, password, or phone number</li>
     <li>Your GPS location or precise geolocation</li>
     <li>Your contacts, photos, camera, microphone, or files</li>
-    <li>Advertising identifiers for targeted ads</li>
-    <li>Data for behavioral advertising or cross-app tracking</li>
   </ul>
-  <p>On Android, the app requests only the <code>INTERNET</code> permission, which is needed to connect to our servers and send crash reports.</p>
+  <p>We do <strong>not</strong> use your information for targeted advertising, behavioral ad profiling, or cross-app tracking, and we do not sell it. The advertising identifier described above is used only for analytics and measurement.</p>
+  <p>On Android, the app does not request access to sensitive device data such as your location, contacts, camera, microphone, or files. It uses the <code>INTERNET</code> and network-state permissions to connect to our servers, along with the advertising-ID and related permissions added by Firebase Analytics as described above.</p>
 
   <h2>How We Use Information</h2>
   <p>We use the information above solely to:</p>
@@ -96,17 +96,17 @@
     <li>Power friends, room invites, and online presence</li>
     <li>Save and sync your profile, avatar, region, and progression between sessions</li>
     <li>Prompt you to update the app when a new version is required</li>
-    <li>Diagnose crashes, fix bugs, and improve app stability and performance</li>
+    <li>Diagnose crashes, fix bugs, understand how the app is used, and improve app stability and performance</li>
     <li>Enforce our Terms and keep the service safe</li>
   </ul>
   <p>We do <strong>not</strong> sell your information, and we do <strong>not</strong> use it for advertising or profiling.</p>
 
   <h2>How Information Is Shared</h2>
   <ul>
-    <li><strong>With other players:</strong> your display name, avatar, Profile ID, and in-game stats are visible to opponents during a match and to friends in social features, as described above.</li>
+    <li><strong>With other players:</strong> your first name, avatar, and Profile ID are visible to the players you are matched with and to your friends. Your in-game stats (such as XP, level, and win record) are shown to the other players at your table during a match.</li>
     <li><strong>With service providers:</strong> we use third-party cloud infrastructure to provide anonymous authentication and to store profile, friends, and related data in a hosted database. These providers process data on our behalf under their terms and privacy policies.</li>
     <li><strong>With our hosting provider:</strong> our game server runs on a third-party cloud hosting provider, which processes connection data on our behalf to host real-time gameplay.</li>
-    <li><strong>With our crash-reporting provider:</strong> we use a third-party service to collect and analyze crash and diagnostic data on our behalf. Reports are used only to operate and improve the app.</li>
+    <li><strong>With our analytics and crash-reporting provider:</strong> we use Google Firebase (Firebase Analytics and Firebase Crashlytics) to collect and analyze usage, crash, and diagnostic data on our behalf. This data is used only to operate and improve the app.</li>
     <li><strong>App distribution:</strong> the app is distributed through the Google Play Store and Apple App Store, which have their own privacy practices.</li>
   </ul>
   <p>We do not share your information with other third parties for their own marketing purposes, and we never sell it.</p>
@@ -114,7 +114,7 @@
   <h2>Data Retention</h2>
   <ul>
     <li><strong>Cloud profile:</strong> your profile, progression, friends, and related account data are kept in our database until you <strong>delete your account</strong> in Settings or we remove it for a violation of our Terms.</li>
-    <li><strong>Crash and diagnostic data:</strong> retained by our crash-reporting provider for as long as needed to investigate issues and improve the app, then deleted or aggregated according to their retention practices.</li>
+    <li><strong>Analytics, crash, and diagnostic data:</strong> retained by Google Firebase for as long as needed to investigate issues and improve the app, then deleted or aggregated according to their retention practices.</li>
     <li><strong>Game server:</strong> active match and room data on the game server is held <strong>in memory only</strong> for the duration of a session. It is not written to a long-term match-history database and is discarded when the match ends or the server restarts.</li>
     <li><strong>On your device:</strong> session tokens and cached data stay on your device until you clear the app's data, uninstall the app, or delete your account.</li>
   </ul>
@@ -124,7 +124,7 @@
 
   <h2>Your Choices and Rights</h2>
   <ul>
-    <li>You can change your display name, avatar, and region at any time within the app.</li>
+    <li>You can change your avatar at any time from your profile. Your name and region are set during initial setup.</li>
     <li>You can <strong>delete your account</strong> at any time from Settings. This permanently deletes your cloud profile and associated data, including friends and progression, subject to our data processors completing deletion.</li>
     <li>You can remove locally stored data by clearing the app's data or uninstalling the app. Uninstalling also stops further crash reports from that installation.</li>
     <li>Depending on where you live (for example, under the GDPR or CCPA), you may have additional rights regarding personal data. Contact us below and we will respond within a reasonable time.</li>
